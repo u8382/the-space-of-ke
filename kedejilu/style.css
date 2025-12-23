@@ -1,0 +1,48 @@
+*{box-sizing:border-box;font-family:Segoe UI, "Helvetica Neue", Arial, "Noto Sans", sans-serif}
+body,html,#app-screen,#login-screen{height:100%;margin:0}
+.screen{display:flex;align-items:center;justify-content:center;height:100%;background:#f5f7fb}
+.hidden{display:none}
+.panel{background:#fff;padding:24px;border-radius:8px;box-shadow:0 6px 18px rgba(20,30,60,.08);min-width:320px}
+.login-panel h1{margin:0 0 12px;font-size:28px}
+.field{margin:8px 0}
+.field label{display:block;margin-bottom:6px;color:#333}
+.field input{width:100%;padding:8px;border:1px solid #dde4ef;border-radius:4px}
+.actions{display:flex;gap:8px;margin-top:12px}
+.actions button{padding:8px 12px;border:none;background:#286ef0;color:#fff;border-radius:6px;cursor:pointer}
+.msg{margin-top:10px;color:#d9534f}
+
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;background:#1f6feb;color:#fff}
+.brand{font-size:18px;font-weight:600}
+.container{display:flex;height:calc(100% - 56px)}
+.sidebar{width:200px;background:#fff;border-right:1px solid #e6ecf6;padding:12px}
+.sidebar ul{list-style:none;padding:0;margin:0}
+.sidebar li{padding:12px;border-radius:6px;cursor:pointer;color:#333}
+.sidebar li.active{background:#e8f0ff;color:#0b47d1;font-weight:600}
+.main{flex:1;padding:16px;overflow:auto}
+.controls{display:flex;gap:8px;align-items:center;margin-bottom:12px}
+.controls button{padding:8px 12px;border:none;background:#2a9d8f;color:#fff;border-radius:6px;cursor:pointer}
+#record-area{background:#fff;padding:12px;border-radius:8px;box-shadow:0 4px 12px rgba(18,30,60,.04)}
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{padding:8px;border-bottom:1px solid #f0f4fb;text-align:left}
+.table th{background:#fafcff}
+.btn-small{padding:6px 8px;border-radius:6px;border:none;cursor:pointer}
+.btn-edit{background:#f0ad4e;color:#fff}
+.btn-del{background:#d9534f;color:#fff}
+
+.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.35)}
+.modal-content{background:#fff;padding:16px;border-radius:8px;min-width:320px}
+#btn-logout{margin-left:12px;padding:6px 8px;border-radius:6px;border:none}
+
+@media(max-width:640px){.sidebar{display:none}.container{flex-direction:column}.topbar{padding:10px}}
+
+/* 打印样式 */
+.no-print{display:inline-block}
+@media print{
+	body{background:#fff;color:#000}
+	.no-print{display:none !important}
+	.topbar{display:none}
+	.sidebar{display:none}
+	.controls{display:none}
+	.modal{display:none}
+	#record-area{box-shadow:none}
+}

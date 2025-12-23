@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>柯的记录</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="login-screen" class="screen">
+    <div class="panel login-panel">
+      <h1>柯的记录</h1>
+      <div class="field">
+        <label>账号</label>
+        <input id="login-username" type="text" placeholder="输入账号" />
+      </div>
+      <div class="field">
+        <label>密码</label>
+        <input id="login-password" type="password" placeholder="输入密码" />
+      </div>
+      <div class="actions">
+        <button id="btn-login">登录</button>
+        <button id="btn-register">注册新账号</button>
+      </div>
+      <div id="login-msg" class="msg"></div>
+    </div>
+  </div>
+
+  <div id="app-screen" class="screen hidden">
+    <div class="topbar">
+      <div class="brand">柯的记录</div>
+      <div class="user-area">当前用户：<span id="current-user"></span> <button id="btn-logout">退出</button></div>
+    </div>
+    <div class="container">
+      <aside class="sidebar">
+        <ul>
+          <li data-type="compound" class="active">复合记录</li>
+          <li data-type="precious">贵金属出入库记录</li>
+        </ul>
+      </aside>
+      <main class="main">
+        <div class="controls">
+          <button id="btn-add">添加记录</button>
+          <input id="filter-date" type="date" />
+          <button id="btn-clear-filter">清除过滤</button>
+          <button id="btn-export">导出 CSV</button>
+          <button id="btn-import">导入 CSV</button>
+          <input id="import-file" type="file" accept=".csv" class="hidden" />
+          <button id="btn-print">打印视图</button>
+        </div>
+        <div id="record-area"></div>
+      </main>
+    </div>
+
+    <!-- 编辑/新增模态 -->
+    <div id="modal" class="modal hidden">
+      <div class="modal-content">
+        <h3 id="modal-title">添加记录</h3>
+        <div class="field"><label>日期</label><input id="rec-date" type="date" /></div>
+        <div class="field"><label>名称</label><input id="rec-name" type="text" /></div>
+        <div class="field"><label>数量</label><input id="rec-qty" type="number" /></div>
+        <div class="field"><label>备注</label><input id="rec-note" type="text" /></div>
+        <div class="actions">
+          <button id="btn-save">保存</button>
+          <button id="btn-cancel">取消</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
